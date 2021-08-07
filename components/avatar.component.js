@@ -1,6 +1,10 @@
 const Avatar = ({ src, alt, className }) => (
   <div className={`rounded-full overflow-hidden ${className}`}>
-    <img src={src} alt={alt} className="bg-top" />
+    <img
+      src={src || "/images/avatar.png"}
+      alt={alt || "avatar"}
+      className="bg-center"
+    />
   </div>
 );
 

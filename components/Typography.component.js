@@ -9,6 +9,7 @@ const variants = {
   "footer-link": "font-cabin text-base text-white opacity-60",
   "post-header": "font-cabin text-dark-blue text-2xl font-semibold",
   auther: "font-cabin text-grey text-xs",
+  subtitle: "font-cabin text-grey text-2xl font-light",
 };
 
 const Typography = ({ variant, className, children }) => (
