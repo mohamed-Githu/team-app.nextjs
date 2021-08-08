@@ -43,26 +43,21 @@ const RatingSection = () => {
   const size = useWindowSize();
 
   const scrollHandler = (id) => {
-    scrollRef.current.scrollBy({
-      behavior: "smooth",
-      left:
-        id === "right"
-          ? scrollRef.current.offsetWidth
-          : -scrollRef.current.offsetWidth,
-    });
-  };
-
-  const scrollOffsetHandler = () => {
-    if (
-      scrollRef.current.offsetWidth + scrollRef.current.scrollLeft >=
-      scrollRef.current.scrollWidth
-    ) {
+    const { offsetWidth, scrollLeft, scrollWidth } = scrollRef.current;
+    const newScrollLeft =
+      id === "right" ? (scrollLeft + offsetWidth) : (scrollLeft - offsetWidth);
+    console.log(offsetWidth, newScrollLeft, scrollWidth, scrollLeft);
+    if (offsetWidth + newScrollLeft >= scrollWidth) {
       setScrollPosition("end");
-    } else if (scrollRef.current.scrollLeft === 0) {
+    } else if (newScrollLeft <= 0) {
       setScrollPosition("start");
     } else {
       setScrollPosition("between");
     }
+    scrollRef.current.scrollBy({
+      behavior: "smooth",
+      left: id === "right" ? offsetWidth : -offsetWidth,
+    });
   };
 
   useEffect(() => {
@@ -73,13 +68,15 @@ const RatingSection = () => {
 
   return (
     <section className="px-4 pb-32b overflow-x-scroll scrollbar-hide mb-20">
-      <Typography variant="h1" className="text-blue-dark text-center mb-20 lg:mb-14">
+      <Typography
+        variant="h1"
+        className="text-blue-dark text-center mb-20 lg:mb-14"
+      >
         What people say about us
       </Typography>
       <div
         ref={scrollRef}
-        onScrollCapture={scrollOffsetHandler}
-        className="max-w-max flex space-x-10 overflow-x-scroll mx-auto p-4 scrollbar-hide"
+        className="max-w-max flex overflow-x-hidden mx-auto py-4 space-x-5 scrollbar-hide"
       >
         {ratings.map((rating) => (
           <RateBox key={rating.auther} {...rating} />
@@ -93,7 +90,7 @@ const RatingSection = () => {
                 ? "text-grey"
                 : "text-blue cursor-pointer"
             }`}
-            onClick={scrollHandler.bind(this, "left")}
+            onClick={scrollPosition !== "start" ? scrollHandler.bind(this, "left") : null}
           />
           <ArrowRightIcon
             className={`${
@@ -101,7 +98,7 @@ const RatingSection = () => {
                 ? "text-grey"
                 : "text-blue cursor-pointer"
             }`}
-            onClick={scrollHandler.bind(this, "right")}
+            onClick={scrollPosition !== "end" ? scrollHandler.bind(this, "right") : null}
           />
         </div>
       )}

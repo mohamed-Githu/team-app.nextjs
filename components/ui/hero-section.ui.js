@@ -11,7 +11,7 @@ const HeroSection = () => (
         className="object-cover object-right z-0"
       />
     </div>
-    <div className="max-w-1160 px-4 mx-auto pt-56 pb-72">
+    <div className="max-w-1160 px-4 mx-auto pt-56 pb-72 xs:pt-20 xs:pb-36">
       <div className="max-w-lg flex flex-col">
         <Typography variant="h1" className="text-white z-10">
           Instant collaboration for remote teams

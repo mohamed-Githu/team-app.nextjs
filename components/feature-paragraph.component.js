@@ -9,11 +9,11 @@ const FeatureParagraph = ({ title, paragraph }) => (
     <Typography variant="p" className="text-grey-dark mb-8">
       {paragraph}
     </Typography>
-    <button className="flex items-center">
+    <button className="flex items-center space-x-2 hover:space-x-3">
       <Typography variant="button" className="text-blue">
         Learn more
       </Typography>
-      <ArrowNarrowRightIcon className="text-blue ml-2 w-4" />
+      <ArrowNarrowRightIcon className="text-blue w-4 duration-200" />
     </button>
   </div>
 );

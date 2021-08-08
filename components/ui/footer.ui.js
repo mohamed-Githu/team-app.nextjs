@@ -22,14 +22,14 @@ const footerLinks = [
 ];
 
 const Footer = () => (
-  <footer className="py-24 px-4 bg-blue-dark">
-    <div className="flex justify-between max-w-1160 mx-auto md:flex-col md:space-y-16">
-      <div className="mr-auto flex flex-col items-start h-72 w-48 md:h-60 md:mb-16 lg:mr-10">
+  <footer className="py-14 xs:py-10 px-4 bg-blue-dark">
+    <div className="flex justify-between max-w-1160 mx-auto md:flex-col md:space-y-16 relative">
+      <Typography variant="footer-link" className="absolute bottom-0 left-0">&copy; Copyright Team App</Typography>
+      <div className="mr-auto flex flex-col items-start w-48 md:mb-16 lg:mr-10">
         <Image src="/images/team.svg" height={29} width={69} />
         <Typography variant="footer-link" className="mb-auto mt-5">
           The last team chat you will ever need
         </Typography>
-        <Typography variant="footer-link">&copy; Copyright Team App</Typography>
       </div>
       <div className="flex flex-wrap justify-end xs:flex-col lg:justify-between">
         {footerLinks.map(({ header, links }, i) => (
