@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { MenuIcon } from "@heroicons/react/solid";
 
@@ -53,12 +54,14 @@ const Nav = ({ theme }) => {
       </div>
       <div className="max-w-1160 px-4 w-full flex justify-between items-center z-30">
         <Link href="/">
-          <img
+          <Image
             src={`${
               theme === "dark" ? "/images/team-dark.svg" : "/images/team.svg"
             }`}
             alt="Team Logo"
             className="mr-auto cursor-pointer"
+            width={69}
+            height={29}
           />
         </Link>
         <div className="space-x-8 flex items-center md:hidden">

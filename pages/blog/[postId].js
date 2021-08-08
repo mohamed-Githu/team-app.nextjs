@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import Nav from "../../components/ui/nav.ui";
 import Footer from "../../components/ui/footer.ui";
-import PageHead from "../../components/page-heade";
+import PageHead from "../../components/page-head";
 import Avatar from "../../components/avatar.component";
 import Typography from "../../components/Typography.component";
 import BlogAuther from "../../components/blog-auther.component";
@@ -28,7 +28,7 @@ const PostPage = ({
         openGraph={{
           title: "Team App | Blog Post -- " + title,
           url: "http://www.team-app-next.com/blog/" + id,
-          image: "http://www.team-app-next.com/public/images" + photo,
+          image: "/post images" + photo,
         }}
       />
       <Nav theme="dark" />

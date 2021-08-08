@@ -1,9 +1,11 @@
+import Image from "next/image";
+
 import Avatar from "./avatar.component";
 import Typography from "./Typography.component";
 
 const RateBox = ({ auther, caption, position, photo }) => (
   <div className="rounded-lg bg-white flex flex-col items-start p-6 shadow-lg max-w-full xs:p-3">
-    <img alt="stars" src="/images/stars.svg" className="h-6" />
+    <Image alt="stars" src="/images/stars.svg" height={24} width={120} />
     <Typography
       variant="caption"
       className="text-grey-dark mt-6 mb-auto w-72 xs:w-56"

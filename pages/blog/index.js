@@ -1,6 +1,6 @@
 import Nav from "../../components/ui/nav.ui";
 import Footer from "../../components/ui/footer.ui";
-import PageHead from "../../components/page-heade";
+import PageHead from "../../components/page-head";
 import Typography from "../../components/Typography.component";
 import ArticleBox from "../../components/article-box.component";
 
@@ -16,7 +16,7 @@ const BlogPage = () => (
       openGraph={{
         title: "Team App | Blog Post -- Our latest ideas & insights",
         url: "http://www.team-app-next.com/blog",
-        image: "http://www.team-app-next.com/public/images/dashboard.png",
+        image: "/images/dashboard.png",
       }}
     />
     <main>

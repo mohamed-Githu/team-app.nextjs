@@ -1,5 +1,5 @@
 import Nav from "../components/ui/nav.ui";
-import PageHead from "../components/page-heade";
+import PageHead from "../components/page-head";
 import Footer from "../components/ui/footer.ui";
 import HeroSection from "../components/ui/hero-section.ui";
 import FirstSection from "../components/ui/first-section.ui";
@@ -17,7 +17,7 @@ export default function Home() {
             "Team App | Homepage -- Instant collaboration for remote teams",
           url: "http://www.team-app-next.com",
           image:
-            "http://www.team-app-next.com/public/images/simple task management.png",
+            "/images/simple task management.png",
         }}
       />
       <main>

@@ -1,4 +1,6 @@
+import Image from "next/image";
 import { ArrowRightIcon } from "@heroicons/react/solid";
+
 import Typography from "../Typography.component";
 
 const footerLinks = [
@@ -23,7 +25,7 @@ const Footer = () => (
   <footer className="py-24 px-4 bg-blue-dark">
     <div className="flex justify-between max-w-1160 mx-auto md:flex-col md:space-y-16">
       <div className="mr-auto flex flex-col items-start h-72 w-48 md:h-60 md:mb-16 lg:mr-10">
-        <img src="/images/team.svg" className="h-7" />
+        <Image src="/images/team.svg" height={29} width={69} />
         <Typography variant="footer-link" className="mb-auto mt-5">
           The last team chat you will ever need
         </Typography>
