@@ -16,8 +16,7 @@ export default function Home() {
           title:
             "Team App | Homepage -- Instant collaboration for remote teams",
           url: "http://www.team-app-next.com",
-          image:
-            "/images/simple task management.png",
+          image: "/images/hero-bg.png",
         }}
       />
       <main>

@@ -28,7 +28,7 @@ const PostPage = ({
         openGraph={{
           title: "Team App | Blog Post -- " + title,
           url: "http://www.team-app-next.com/blog/" + id,
-          image: "/post images" + photo,
+          image: photo,
         }}
       />
       <Nav theme="dark" />
