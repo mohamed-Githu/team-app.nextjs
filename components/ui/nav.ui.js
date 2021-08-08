@@ -52,21 +52,25 @@ const Nav = ({ theme }) => {
         </Link>
         <div className="space-x-8 flex items-center md:hidden">
           {links.map(({ link, url, disabled }) => (
-            <Link href={url}>
-              <Typography
-                variant="header-link"
-                className={`${
-                  theme === "dark" ? "text-blue-dark" : "text-white"
-                } opacity-80 ${
-                  !disabled
-                    ? "hover:opacity-100 cursor-pointer"
-                    : "cursor-default"
-                }`}
-                key={link}
-              >
-                {link}
-              </Typography>
-            </Link>
+            <Typography
+              variant="header-link"
+              className={`${
+                theme === "dark" ? "text-blue-dark" : "text-white"
+              }`}
+              key={link}
+            >
+              <Link href={url}>
+                <div
+                  className={`opacity-80 ${
+                    !disabled
+                      ? "hover:opacity-100 cursor-pointer"
+                      : "cursor-default opacity-70"
+                  }`}
+                >
+                  {link}
+                </div>
+              </Link>
+            </Typography>
           ))}
           <button
             className={`${
@@ -97,10 +101,11 @@ const Nav = ({ theme }) => {
       >
         <div className="flex-col flex mt-4">
           <div className="justify-between flex">
-            <Link href="/" className="cursor-pointer">
+            <Link href="/">
               <Image
                 src="/images/team.svg"
                 alt="Team Logo"
+                className="cursor-pointer"
                 width={69}
                 height={29}
               />
@@ -117,11 +122,21 @@ const Nav = ({ theme }) => {
                 className={`${
                   disabled
                     ? "text-grey-dark opacity-50"
-                    : "text-white opacity-80 hover:opacity-100 cursor-pointer"
+                    : "text-white cursor-pointer"
                 }`}
                 key={link}
               >
-                <Link href={url}>{link}</Link>
+                <Link href={url}>
+                  <div
+                    className={`opacity-80 ${
+                      !disabled
+                        ? "hover:opacity-100 cursor-pointer"
+                        : "cursor-default opacity-70"
+                    }`}
+                  >
+                    {link}
+                  </div>
+                </Link>
               </Typography>
             ))}
 

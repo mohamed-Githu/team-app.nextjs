@@ -40,10 +40,19 @@ const PostPage = ({
           <BlogAuther avatar={avatar} auther={auther} date={date} />
         </div>
         <div className="max-w-4xl mb-16 mx-auto">
-          <Image src={photo} alt={title} className="w-full object-cover" width={900} height={500} />
+          <Image
+            src={photo}
+            alt={title}
+            className="w-full object-cover"
+            width={900}
+            height={500}
+          />
         </div>
         <div className="max-w-3xl mb-24 mx-auto">
-          <Typography variant="p" className="text-blue-dark leading-8">
+          <Typography
+            variant="p"
+            className="text-blue-dark leading-8 whitespace-pre-line"
+          >
             {content}
           </Typography>
           <div className="flex justify-start mt-14">
