@@ -51,16 +51,22 @@ const Nav = ({ theme }) => {
           />
         </Link>
         <div className="space-x-8 flex items-center md:hidden">
-          {links.map(({ link, url }) => (
-            <Typography
-              variant="header-link"
-              className={`${
-                theme === "dark" ? "text-blue-dark" : "text-white"
-              } opacity-80 hover:opacity-100`}
-              key={link}
-            >
-              <Link href={url}>{link}</Link>
-            </Typography>
+          {links.map(({ link, url, disabled }) => (
+            <Link href={url}>
+              <Typography
+                variant="header-link"
+                className={`${
+                  theme === "dark" ? "text-blue-dark" : "text-white"
+                } opacity-80 ${
+                  !disabled
+                    ? "hover:opacity-100 cursor-pointer"
+                    : "cursor-default"
+                }`}
+                key={link}
+              >
+                {link}
+              </Typography>
+            </Link>
           ))}
           <button
             className={`${
@@ -105,10 +111,14 @@ const Nav = ({ theme }) => {
             />
           </div>
           <div className="space-y-4 flex-col flex items-start mt-8">
-            {links.map(({ link, url }) => (
+            {links.map(({ link, url, disabled }) => (
               <Typography
                 variant="header-link"
-                className="text-white opacity-80 hover:opacity-100"
+                className={`${
+                  disabled
+                    ? "text-grey-dark opacity-50"
+                    : "text-white opacity-80 hover:opacity-100 cursor-pointer"
+                }`}
                 key={link}
               >
                 <Link href={url}>{link}</Link>

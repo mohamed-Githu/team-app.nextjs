@@ -3,7 +3,7 @@ const variants = {
   p: "font-cabin font-semibold text-lg leading-7",
   caption: "font-cabin font-normal text-base leading-7",
   header: "font-cabin font-bold text-base tracking-widest capitalize",
-  "header-link": "font-cabin font-bold text-lg cursor-pointer",
+  "header-link": "font-cabin font-bold text-lg",
   button: "font-cabin font-bold text-base",
   subheader: "font-cabin font-semibold text-sm",
   "footer-link": "font-cabin text-base text-white opacity-60",

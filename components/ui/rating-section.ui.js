@@ -45,8 +45,7 @@ const RatingSection = () => {
   const scrollHandler = (id) => {
     const { offsetWidth, scrollLeft, scrollWidth } = scrollRef.current;
     const newScrollLeft =
-      id === "right" ? (scrollLeft + offsetWidth) : (scrollLeft - offsetWidth);
-    console.log(offsetWidth, newScrollLeft, scrollWidth, scrollLeft);
+      id === "right" ? scrollLeft + offsetWidth : scrollLeft - offsetWidth;
     if (offsetWidth + newScrollLeft >= scrollWidth) {
       setScrollPosition("end");
     } else if (newScrollLeft <= 0) {
@@ -90,7 +89,11 @@ const RatingSection = () => {
                 ? "text-grey"
                 : "text-blue cursor-pointer"
             }`}
-            onClick={scrollPosition !== "start" ? scrollHandler.bind(this, "left") : null}
+            onClick={
+              scrollPosition !== "start"
+                ? scrollHandler.bind(this, "left")
+                : null
+            }
           />
           <ArrowRightIcon
             className={`${
@@ -98,7 +101,11 @@ const RatingSection = () => {
                 ? "text-grey"
                 : "text-blue cursor-pointer"
             }`}
-            onClick={scrollPosition !== "end" ? scrollHandler.bind(this, "right") : null}
+            onClick={
+              scrollPosition !== "end"
+                ? scrollHandler.bind(this, "right")
+                : null
+            }
           />
         </div>
       )}
