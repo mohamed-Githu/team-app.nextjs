@@ -29,6 +29,9 @@ export default function Home() {
           property="og:image"
           content="http://www.team-app-next.com/images/simple task management.png"
         />
+        <meta property="og:image:width" content="1200" />
+
+        <meta property="og:image:height" content="630" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
