@@ -2,7 +2,7 @@ import Avatar from "./avatar.component";
 import Typography from "./Typography.component";
 
 const RateBox = ({ auther, caption, position, photo }) => (
-  <div className="rounded-lg bg-white flex flex-col items-start p-6 shadow-lg max-w-full">
+  <div className="rounded-lg bg-white flex flex-col items-start p-6 shadow-lg max-w-full xs:p-3">
     <img alt="stars" src="/images/stars.svg" className="h-6" />
     <Typography
       variant="caption"

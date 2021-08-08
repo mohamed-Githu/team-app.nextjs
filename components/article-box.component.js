@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import Link from "next/link";
 import BlogAuther from "./blog-auther.component";
 import Typography from "./Typography.component";
@@ -14,10 +16,12 @@ const ArticleBox = ({
   <Link href={`/blog/${id}`}>
     <div className="flex flex-col h-blog-post rounded-md overflow-hidden shadow-lg cursor-pointer">
       <div className="h-48 w-full">
-        <img
+        <Image
           src={photo}
           alt={title}
-          className="bg-top object-cover w-full h-full"
+          className="bg-top object-cover"
+          height={192}
+          width={400}
         />
       </div>
       <div className="flex flex-col p-5 flex-grow">

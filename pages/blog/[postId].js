@@ -1,7 +1,8 @@
-import Head from "next/head";
+import Image from "next/image";
 
 import Nav from "../../components/ui/nav.ui";
 import Footer from "../../components/ui/footer.ui";
+import PageHead from "../../components/page-heade";
 import Avatar from "../../components/avatar.component";
 import Typography from "../../components/Typography.component";
 import BlogAuther from "../../components/blog-auther.component";
@@ -21,41 +22,25 @@ const PostPage = ({
 }) => {
   return (
     <div className="overflow-x-hidden">
-      <Head>
-        <title>Team App | {title}</title>
-        <meta
-          name="description"
-          content="In our blog post we share our latest thoughts, insights and Ideas. Subscribing to the blog will make you gain a lot of knowledge."
-        />
-        <meta
-          property="og:title"
-          content="Team App | Blog Post -- Our latest ideas & insights"
-        />
-        <meta property="og:description" content={description} />
-        <meta
-          property="og:url"
-          content={`http://www.team-app-next.com/blog/${id}`}
-        />
-        <meta
-          property="og:image"
-          content={`http://www.team-app-next.com${photo}`}
-        />
-        <meta property="og:image:width" content="1200" />
-
-        <meta property="og:image:height" content="630" />
-        <meta property="og:type" content="website" />
-        <link rel="icon" href="/images/team.svg" />
-      </Head>
+      <PageHead
+        title={`Team App | ${title}`}
+        description={description}
+        openGraph={{
+          title: "Team App | Blog Post -- " + title,
+          url: "http://www.team-app-next.com/blog/" + id,
+          image: "http://www.team-app-next.com/public/images" + photo,
+        }}
+      />
       <Nav theme="dark" />
       <main className="px-4">
-        <div className="max-w-3xl px-4 mx-auto mt-36 mb-8">
-          <Typography variant="h1" className="text-blue-dark mb-12">
+        <div className="max-w-3xl mx-auto mt-36 mb-8">
+          <Typography variant="h1" className="text-blue-dark mb-12 xs:text-4xl">
             {title}
           </Typography>
           <BlogAuther avatar={avatar} auther={auther} date={date} />
         </div>
         <div className="max-w-4xl mb-16 mx-auto">
-          <img src={photo} alt={title} className="w-full" />
+          <Image src={photo} alt={title} className="w-full object-cover" width={900} height={500} />
         </div>
         <div className="max-w-3xl mb-24 mx-auto">
           <Typography variant="p" className="text-blue-dark leading-8">

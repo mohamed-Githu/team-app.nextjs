@@ -1,7 +1,6 @@
-import Head from "next/head";
-
 import Nav from "../../components/ui/nav.ui";
 import Footer from "../../components/ui/footer.ui";
+import PageHead from "../../components/page-heade";
 import Typography from "../../components/Typography.component";
 import ArticleBox from "../../components/article-box.component";
 
@@ -11,27 +10,15 @@ const fakePosts = getPostsOverview();
 
 const BlogPage = () => (
   <div className="bg-grey-light overflow-x-hidden">
-    <Head>
-      <title>Team App | Blog Post</title>
-      <meta
-        name="description"
-        content="In our blog post we share our latest thoughts, insights and Ideas. Subscribing to the blog will make you gain a lot of knowledge."
-      />
-      <meta
-        property="og:title"
-        content="Team App | Blog Post -- Our latest ideas & insights"
-      />
-      <meta
-        property="og:description"
-        content="In our blog post we share our latest thoughts, insights and Ideas. Subscribing to the blog will make you gain a lot of knowledge."
-      />
-      <meta property="og:url" content="http://www.team-app-next.com/blog" />
-      <meta
-        property="og:image"
-        content="http://www.team-app-next.com/images/dashboard.png"
-      />
-      <link rel="icon" href="/images/team.svg" />
-    </Head>
+    <PageHead
+      title="Team App | Blog Post"
+      description="In our blog post we share our latest thoughts, insights and Ideas. Subscribing to the blog will make you gain a lot of knowledge."
+      openGraph={{
+        title: "Team App | Blog Post -- Our latest ideas & insights",
+        url: "http://www.team-app-next.com/blog",
+        image: "http://www.team-app-next.com/public/images/dashboard.png",
+      }}
+    />
     <main>
       <Nav theme="dark" />
       <div className="max-w-1160 px-4 mx-auto mt-36">

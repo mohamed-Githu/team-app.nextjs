@@ -1,16 +1,22 @@
+import Image from "next/image";
+
 import FeatureParagraph from "./feature-paragraph.component";
 
 const Feature = ({ title, paragraph, photoPath, reverse }) => (
   <div
-    className={`flex justify-between items-center sm:flex-col-reverse ${
+    className={`flex justify-between items-center md:flex-col-reverse ${
       reverse ? "flex-row-reverse" : "flex-row"
     }`}
   >
-    <img
-      src={photoPath}
-      alt={title}
-      className={`w-1/2 ${reverse ? "ml-16" : "mr-16"} lg:mx-0 sm:mt-6 sm:w-full sm:max-h-96 object-cover object-top xs:max-h-full`}
-    />
+    <div className="w-5/12 md:mt-6 md:w-full flex justify-center">
+      <Image
+        src={photoPath}
+        alt={title}
+        height={500}
+        width={600}
+        className={`${reverse ? "ml-16" : "mr-16"} object-cover object-top`}
+      />
+    </div>
     <FeatureParagraph title={title} paragraph={paragraph} />
   </div>
 );

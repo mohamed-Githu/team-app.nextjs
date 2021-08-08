@@ -2,7 +2,7 @@ import Typography from "./Typography.component";
 import { ArrowNarrowRightIcon } from "@heroicons/react/solid";
 
 const FeatureParagraph = ({ title, paragraph }) => (
-  <div className="max-w-lg px-4 lg:mr-auto">
+  <div className="max-w-lg px-4 lg:max-w-sm md:max-w-xl">
     <Typography variant="h1" className="text-blue-dark mb-4">
       {title}
     </Typography>
