@@ -7,7 +7,7 @@ import "tailwindcss/tailwind.css";
 import LogoLoadingAnimation from "../components/animations/logo-loading.animation";
 
 function MyApp({ Component, pageProps }) {
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const router = useRouter();
 
   const handleStart = () => setIsLoading(true);
@@ -22,6 +22,8 @@ function MyApp({ Component, pageProps }) {
       router.events.on("routeChangeComplete", handleStop);
     };
   }, [router]);
+
+  useEffect(() => handleStop(), []);
 
   return isLoading ? <LogoLoadingAnimation /> : <Component {...pageProps} />;
 }
