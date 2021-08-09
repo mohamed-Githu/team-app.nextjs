@@ -52,7 +52,7 @@ const Nav = ({ theme }) => {
         </Link>
         <div className="space-x-8 flex items-center md:hidden">
           {links.map(({ link, url, disabled }) => (
-            <Link href={url} passHref>
+            <Link href={url} passHref key={link}>
               <a>
                 <Typography
                   variant="header-link"
@@ -63,7 +63,6 @@ const Nav = ({ theme }) => {
                       ? "hover:opacity-100 cursor-pointer"
                       : "cursor-default opacity-70"
                   }`}
-                  key={link}
                 >
                   {link}
                 </Typography>
@@ -115,7 +114,7 @@ const Nav = ({ theme }) => {
           </div>
           <div className="space-y-4 flex-col flex items-start mt-8">
             {links.map(({ link, url, disabled }) => (
-              <Link href={url} passHref>
+              <Link href={url} passHref key={link}>
                 <a>
                   <Typography
                     variant="header-link"
@@ -124,7 +123,6 @@ const Nav = ({ theme }) => {
                         ? "text-grey-dark opacity-50 cursor-default"
                         : "text-white hover:opacity-100 cursor-pointer"
                     } opacity-80`}
-                    key={link}
                   >
                     {link}
                   </Typography>
@@ -135,7 +133,7 @@ const Nav = ({ theme }) => {
             <button
               className={`${
                 theme === "dark" ? "bg-blue" : "bg-white"
-              } bg-opacity-20 px-6 py-2 rounded-lg xs:hidden`}
+              } bg-opacity-20 px-6 py-2 rounded-lg`}
             >
               <Typography
                 variant="header-link"
@@ -154,7 +152,7 @@ const Nav = ({ theme }) => {
       >
         <div
           className={`fixed top-0 left-0 w-screen h-screen backdrop-filter backdrop-brightness-50 duration-200 ease-out ${
-            openDrawer ? "opacity-100" : "opacity-0 -translate-y-full"
+            openDrawer ? "opacity-100" : "opacity-0"
           }`}
           onClick={handleOpenDrawer}
         />
