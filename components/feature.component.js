@@ -15,8 +15,6 @@ const Feature = ({ title, paragraph, photoPath, reverse }) => (
         height={500}
         width={600}
         className={`${reverse ? "ml-16" : "mr-16"} object-cover object-top`}
-        placeholder="blur"
-        blurDataURL={photoPath}
       />
     </div>
     <FeatureParagraph title={title} paragraph={paragraph} />

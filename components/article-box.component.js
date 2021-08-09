@@ -23,8 +23,6 @@ const ArticleBox = ({
           height={392}
           width={600}
           layout="responsive"
-          placeholder=""
-          blurDataURL={photo}
         />
       </div>
       <div className="flex flex-col p-5 flex-grow">

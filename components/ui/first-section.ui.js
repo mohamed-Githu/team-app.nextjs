@@ -14,8 +14,6 @@ const FirstSection = () => (
         width={1052}
         height={632}
         layout="responsive"
-        placeholder="blur"
-        blurDataURL="/images/dashboard.png"
       />
     </div>
   </section>
