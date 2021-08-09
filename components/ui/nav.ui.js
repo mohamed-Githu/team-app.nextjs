@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
-import { MenuIcon } from "@heroicons/react/solid";
+import { MenuIcon, XIcon } from "@heroicons/react/solid";
 
 import Typography from "../Typography.component";
 
@@ -108,7 +108,7 @@ const Nav = ({ theme }) => {
                 height={29}
               />
             </Link>
-            <MenuIcon
+            <XIcon
               className="h-8 p-0.5 transform translate-x-3 text-white cursor-pointer"
               onClick={handleOpenDrawer}
             />
