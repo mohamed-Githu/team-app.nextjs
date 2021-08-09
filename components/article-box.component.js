@@ -15,13 +15,13 @@ const ArticleBox = ({
 }) => (
   <Link href={`/blog/${id}`}>
     <div className="flex flex-col h-blog-post rounded-md overflow-hidden shadow-lg cursor-pointer">
-      <div className="h-48 w-full">
+      <div className="h-48 w-full overflow-hidden">
         <Image
           src={photo}
           alt={title}
-          className="bg-top object-cover"
-          height={192}
-          width={400}
+          className="object-center object-cover w-full h-full"
+          height={392}
+          width={600}
         />
       </div>
       <div className="flex flex-col p-5 flex-grow">

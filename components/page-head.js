@@ -17,7 +17,7 @@ const PageHead = ({ title, description, openGraph }) => {
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
       <meta property="og:type" content="website" />
-      <link rel="icon" href="/images/team.svg" />
+      <link rel="icon" href="/images/logo.svg" />
     </Head>
   );
 };

@@ -9,17 +9,17 @@ const links = [
   {
     link: "Product",
     disabled: true,
-    url: "",
+    url: "/",
   },
   {
     link: "Services",
     disabled: true,
-    url: "",
+    url: "/",
   },
   {
     link: "Contacts",
     disabled: true,
-    url: "",
+    url: "/",
   },
   {
     link: "Blog",
@@ -52,25 +52,23 @@ const Nav = ({ theme }) => {
         </Link>
         <div className="space-x-8 flex items-center md:hidden">
           {links.map(({ link, url, disabled }) => (
-            <Typography
-              variant="header-link"
-              className={`${
-                theme === "dark" ? "text-blue-dark" : "text-white"
-              }`}
-              key={link}
-            >
-              <Link href={url}>
-                <div
-                  className={`opacity-80 ${
+            <Link href={url} passHref>
+              <a>
+                <Typography
+                  variant="header-link"
+                  className={`${
+                    theme === "dark" ? "text-blue-dark" : "text-white"
+                  } opacity-80 ${
                     !disabled
                       ? "hover:opacity-100 cursor-pointer"
                       : "cursor-default opacity-70"
                   }`}
+                  key={link}
                 >
                   {link}
-                </div>
-              </Link>
-            </Typography>
+                </Typography>
+              </a>
+            </Link>
           ))}
           <button
             className={`${
@@ -117,27 +115,21 @@ const Nav = ({ theme }) => {
           </div>
           <div className="space-y-4 flex-col flex items-start mt-8">
             {links.map(({ link, url, disabled }) => (
-              <Typography
-                variant="header-link"
-                className={`${
-                  disabled
-                    ? "text-grey-dark opacity-50"
-                    : "text-white cursor-pointer"
-                }`}
-                key={link}
-              >
-                <Link href={url}>
-                  <div
-                    className={`opacity-80 ${
-                      !disabled
-                        ? "hover:opacity-100 cursor-pointer"
-                        : "cursor-default opacity-70"
-                    }`}
+              <Link href={url} passHref>
+                <a>
+                  <Typography
+                    variant="header-link"
+                    className={`${
+                      disabled
+                        ? "text-grey-dark opacity-50 cursor-default"
+                        : "text-white hover:opacity-100 cursor-pointer"
+                    } opacity-80`}
+                    key={link}
                   >
                     {link}
-                  </div>
-                </Link>
-              </Typography>
+                  </Typography>
+                </a>
+              </Link>
             ))}
 
             <button
