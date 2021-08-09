@@ -8,8 +8,8 @@ const FirstSection = () => (
       paragraph="Quick and fast way for sharing, collaborating and managing projects with your team.
         Scheduling and meetings has never been easier."
     />
-    <div className="-mr-120 lg:mr-0">
-      <Image src="/images/dashboard.png" width={1052 * 1} height={632 * 1} />
+    <div className="-mr-120 lg:mr-0 w-full max-h-screen">
+      <Image src="/images/dashboard.png" width={1052} height={632} layout="responsive" />
     </div>
   </section>
 );

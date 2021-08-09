@@ -22,6 +22,7 @@ const ArticleBox = ({
           className="object-center object-cover w-full h-full"
           height={392}
           width={600}
+          layout="responsive"
         />
       </div>
       <div className="flex flex-col p-5 flex-grow">
