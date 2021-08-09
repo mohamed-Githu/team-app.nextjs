@@ -1,7 +1,6 @@
 import Head from "next/head";
 
 const PageHead = ({ title, description, openGraph }) => {
-  console.log("http://www.team-app-next.com" + openGraph.image);
   return (
     <Head>
       <title>{title}</title>

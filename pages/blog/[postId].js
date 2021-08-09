@@ -8,6 +8,7 @@ import Typography from "../../components/Typography.component";
 import BlogAuther from "../../components/blog-auther.component";
 
 import { getPaths, getPostById } from "../../utils";
+import WithSpinner from "../../components/HOC/with-spinner";
 
 const PostPage = ({
   title,
@@ -19,19 +20,19 @@ const PostPage = ({
   auther,
   position,
   id,
-}) => {
-  return (
-    <div className="overflow-x-hidden">
-      <PageHead
-        title={`Team App | ${title}`}
-        description={description}
-        openGraph={{
-          title: "Team App | Blog Post -- " + title,
-          url: "http://www.team-app-next.com/blog/" + id,
-          image: photo,
-        }}
-      />
-      <Nav theme="dark" />
+}) => (
+  <div className="overflow-x-hidden">
+    <PageHead
+      title={`Team App | ${title}`}
+      description={description}
+      openGraph={{
+        title: "Team App | Blog Post -- " + title,
+        url: "http://www.team-app-next.com/blog/" + id,
+        image: photo,
+      }}
+    />
+    <Nav theme="dark" />
+    <WithSpinner isLoading={!id}>
       <main className="px-4">
         <div className="max-w-3xl mx-auto mt-36 mb-8">
           <Typography variant="h1" className="text-blue-dark mb-12 xs:text-4xl">
@@ -90,13 +91,18 @@ const PostPage = ({
         </div>
       </main>
       <Footer />
-    </div>
-  );
-};
+    </WithSpinner>
+  </div>
+);
 
-export const getStaticProps = (ctx) => {
-  const post = getPostById(ctx.params.postId);
+export const getStaticProps = async (ctx) => {
+  const post = await getPostById(ctx.params.postId);
 
+  if (!post) {
+    return {
+      notFound: true,
+    };
+  }
   return {
     props: post,
   };
