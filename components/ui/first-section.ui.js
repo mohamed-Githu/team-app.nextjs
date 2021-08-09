@@ -9,7 +9,14 @@ const FirstSection = () => (
         Scheduling and meetings has never been easier."
     />
     <div className="-mr-120 lg:mr-0 w-full max-h-screen">
-      <Image src="/images/dashboard.png" width={1052} height={632} layout="responsive" />
+      <Image
+        src="/images/dashboard.png"
+        width={1052}
+        height={632}
+        layout="responsive"
+        placeholder="blur"
+        blurDataURL="/images/dashboard.png"
+      />
     </div>
   </section>
 );

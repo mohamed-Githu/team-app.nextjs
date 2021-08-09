@@ -9,6 +9,8 @@ const HeroSection = () => (
         src="/images/hero-bg.png"
         layout="fill"
         className="object-cover object-right z-0"
+        placeholder="blur"
+        blurDataURL="/images/hero-bg.png"
       />
     </div>
     <div className="max-w-1160 px-4 mx-auto pt-56 pb-72 xs:pt-20 xs:pb-36">

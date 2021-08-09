@@ -47,6 +47,8 @@ const PostPage = ({
             className="w-full object-cover"
             width={900}
             height={500}
+            placeholder="blur"
+            blurDataURL={photo}
           />
         </div>
         <div className="max-w-3xl mb-24 mx-auto">

@@ -8,6 +8,8 @@ const Avatar = ({ src, alt, className }) => (
       className="bg-center object-cover"
       height={70}
       width={70}
+      placeholder="blur"
+      blurDataURL={src || "/images/avatar.png"}
     />
   </div>
 );

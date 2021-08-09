@@ -27,9 +27,7 @@ module.exports = {
       xs: { max: "455px" },
     },
     extend: {
-      backgroundImage: () => ({
-        "hero-bg": "url('/images/hero-bg.png')",
-      }),
+      animation: { expand: "expand 1.2s linear infinite" },
     },
   },
   variants: {
