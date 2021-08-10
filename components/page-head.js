@@ -10,7 +10,7 @@ const PageHead = ({ title, description, openGraph }) => {
       <meta property="og:url" content={openGraph.url} />
       <meta
         property="og:image"
-        content={"http://www.team-app-next.com" + openGraph.image}
+        content={"https://team-app-nextjs.vercel.app/" + openGraph.image}
       />
       <meta property="og:image:type" content="image/png" />
       <meta property="og:image:width" content="1200" />
