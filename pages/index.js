@@ -15,7 +15,7 @@ export default function Home() {
         openGraph={{
           title:
             "Team App | Homepage -- Instant collaboration for remote teams",
-          url: "http://www.team-app-next.com",
+          url: "https://team-app-nextjs.vercel.app/",
           image: "/images/hero-bg.png",
         }}
       />

@@ -15,7 +15,7 @@ const BlogPage = () => (
       description="In our blog post we share our latest thoughts, insights and Ideas. Subscribing to the blog will make you gain a lot of knowledge."
       openGraph={{
         title: "Team App | Blog Post -- Our latest ideas & insights",
-        url: "http://www.team-app-next.com/blog",
+        url: "https://team-app-nextjs.vercel.app/blog",
         image: "/images/dashboard.png",
       }}
     />

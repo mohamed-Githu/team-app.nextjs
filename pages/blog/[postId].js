@@ -27,7 +27,7 @@ const PostPage = ({
       description={description}
       openGraph={{
         title: "Team App | Blog Post -- " + title,
-        url: "http://www.team-app-next.com/blog/" + id,
+        url: "https://team-app-nextjs.vercel.app/blog/" + id,
         image: photo,
       }}
     />
